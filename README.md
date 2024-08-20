@@ -1,1 +1,1 @@
-# **Blog website using Flask**
+# **Blog app using Python Flask**
