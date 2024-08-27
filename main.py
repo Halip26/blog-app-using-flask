@@ -129,9 +129,9 @@ def login():
 
 
 @app.route("/signup", methods=["POST", "GET"])
-def signin():
+def signup():
     if request.method == "POST":
-        print("hello")
+        print("Attempt to sign up!")
         username = request.form["username"]
         password = request.form["password"]
 
