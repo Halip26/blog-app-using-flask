@@ -111,7 +111,6 @@ def delete(id):
 @app.route("/login", methods=["POST", "GET"])
 def login():
     if request.method == "POST":
-        # print("hello")
         username = request.form["username"]
         password = request.form["password"]
         user = User.query.filter_by(username=username).first()
@@ -122,7 +121,7 @@ def login():
             return render_template("not.html")
         else:
             login_user(user)
-            print("yes")
+            print("Successfully logged in")
             return redirect(url_for("index"))
 
     return render_template("login.html")
@@ -152,7 +151,4 @@ def logout():
 
 # main driver function
 if __name__ == "__main__":
-
-    # run() method of Flask class runs the application
-    # on the local development server.
     app.run(debug=True)
