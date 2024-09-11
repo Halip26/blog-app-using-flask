@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign-Up</title>
+    <!-- Connected to the static CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <!-- head favicon -->
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='images/Halipsblog.png') }}"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <form
+      class="modal-content animate"
+      action="{{ url_for('signup') }}"
+      method="POST"
+    >
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input
+          type="text"
+          placeholder="Enter Username"
+          name="username"
+          id="username"
+          required
+        />
+
+        <label for="psw"><b>Password</b></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="password"
+          id="password"
+          required
+        />
+
+        <button type="submit">Sign-Up</button>
+      </div>
+
+      <div class="container" style="background-color: #f1f1f1">
+        <a href="/"
+          ><button
+            type="button"
+            onclick="document.getElementById('id01').style.display='none'"
+            class="cancelbtn"
+          >
+            Cancel
+          </button></a
+        >
+
+        <span class="psw">Forgot <a href="#">Password?</a></span>
+      </div>
+    </form>
+  </body>
+</html>
