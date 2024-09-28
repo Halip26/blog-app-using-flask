@@ -19,10 +19,11 @@
     />
   </head>
   <body>
+    <!-- Part 1-->
     <div id="part1">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Halip's Blog</a>
+          <a href="#" class="navbar-brand">Halip's Blog</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -37,15 +38,14 @@
           <div class="collapse navbar-collapse" id="navbarScroll">
             <ul
               class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
-              style="--bs-scroll-height: 100px"
+              style="--bs-scroll-height: 150px"
             >
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                <a class="nav-link active" href="/" aria-current="page">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('about') }}">About</a>
               </li>
-
               <li class="nav-item">
                 <a
                   class="nav-link"
@@ -55,8 +55,10 @@
                 >
               </li>
             </ul>
+            <!-- add search button -->
             <form class="d-flex">
               <input
+                placeholder="Type your text"
                 class="form-control me-2"
                 type="search"
                 placeholder="Search"
@@ -71,8 +73,9 @@
       </nav>
     </div>
 
-    <div id="part3">
-      <div class="container">
+    <!-- part 2 -->
+    <div id="part2">
+      <div class="container mt-3">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <form
@@ -82,6 +85,7 @@
               action="{{ url_for('addpost') }}"
               novalidate
             >
+              <!-- form group title -->
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
                   <label>Title</label>
@@ -92,12 +96,12 @@
                     name="title"
                     id="title"
                     required
-                    data-validation-required-message="Please enter a title."
+                    data-validation-required-message="Please enter a title"
                   />
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
-
+              <!-- form group author -->
               <div class="control-group">
                 <div
                   class="form-group col-xs-12 floating-label-form-group controls"
@@ -110,38 +114,40 @@
                     name="author"
                     id="author"
                     required
-                    data-validation-required-message="Please enter your phone number."
+                    data-validation-required-message="Please enter your name"
                   />
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
+              <!-- form group Blog Content -->
               <div class="control-group">
-                <div class="form-group floating-label-form-group controls">
+                <div
+                  class="form-group col-xs-12 floating-label-form-group controls"
+                >
                   <label>Blog Content</label>
                   <textarea
                     rows="5"
                     class="form-control"
-                    placeholder="Blog content"
                     name="content"
                     id="content"
+                    placeholder="Put your blog content here"
                     required
-                    data-validation-required-message="Please enter a message."
+                    data-validation-required-message="Please enter your message"
                   ></textarea>
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
               <div class="mb-3">
                 <label for="formFileSm" class="form-label"
-                  >Small file input example</label
+                  >Choose your Blog Thumbnail Image</label
                 >
                 <input
+                  type="file"
                   class="form-control form-control-sm"
                   id="formFileSm"
-                  type="file"
                 />
               </div>
-              <br />
-              <div id="success"></div>
+              <div class="mt-2" id="success"></div>
               <div class="form-group">
                 <button
                   type="submit"
@@ -159,9 +165,7 @@
 
     <div></div>
 
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- Javascript bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
