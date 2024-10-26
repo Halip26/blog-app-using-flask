@@ -11,12 +11,15 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+
+    <link rel="stylesheet" href="../static/css/style.css" />
   </head>
   <body>
+    <!-- Part 1-->
     <div id="part1">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Halip's Blog</a>
+          <a href="#" class="navbar-brand">Halip's Blog</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -31,25 +34,29 @@
           <div class="collapse navbar-collapse" id="navbarScroll">
             <ul
               class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
-              style="--bs-scroll-height: 100px"
+              style="--bs-scroll-height: 150px"
             >
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                <a class="nav-link active" href="/" aria-current="page">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./about.html">About</a>
+                <a class="nav-link" href="{{ url_for('about') }}">About</a>
               </li>
-
               <li class="nav-item">
-                <a class="nav-link" href="./add.html" tabindex="-1">Add</a>
+                <a
+                  class="nav-link"
+                  href="{{ url_for('addpost') }}"
+                  tabindex="-1"
+                  >Add</a
+                >
               </li>
             </ul>
+            <!-- add search button -->
             <form class="d-flex">
               <input
+                placeholder="Type your text"
                 class="form-control me-2"
                 type="search"
-                placeholder="Search"
-                aria-label="Search"
               />
               <button class="btn btn-outline-success" type="submit">
                 Search
@@ -60,6 +67,7 @@
       </nav>
     </div>
 
+    <!-- part 2 -->
     <div id="part2">
       <div
         id="carouselExampleCaptions"
@@ -75,21 +83,38 @@
             aria-current="true"
             aria-label="Slide 1"
           ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="../static/about-bg.jpg" class="d-block w-100" alt="..." />
+            <img
+              class="d-block w-100"
+              src="../static/images/about-bg.jpg"
+              alt="about-bg.jpg"
+            />
             <div class="carousel-caption d-none d-md-block">
-              <h5>About Me</h5>
               <p>
-                Some representative placeholder content for the first slide.
+                Some respresenattive placeholder content dor the first slide
               </p>
             </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="../static/images/home-bg2.jpg"
+              alt="home-bg2.jpg"
+            />
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Part 3 -->
     <div id="part3">
       <div class="container">
         <div class="row">
@@ -111,7 +136,7 @@
                     name="title"
                     id="title"
                     data-validation-required-message="Please enter a title."
-					required
+                    required
                   />
                   <p class="help-block text-danger"></p>
                 </div>
@@ -129,7 +154,7 @@
                     name="author"
                     id="author"
                     data-validation-required-message="Please enter your name as a author"
-					required
+                    required
                   />
                   <p class="help-block text-danger"></p>
                 </div>
@@ -138,11 +163,16 @@
                 <div class="form-group floating-label-form-group controls">
                   <label>Blog Content</label>
 
-                  <!-- <textarea rows="5" class="form-control"
-                                    placeholder="{{edit.content}}" name="content" id="content" required 
-                                    data-validation-required-message="Please enter a message."> 
-                                    Geeksforgeeks 
-                               </textarea> -->
+                  <!-- <textarea
+                    rows="5"
+                    class="form-control"
+                    placeholder="{{edit.content}}"
+                    name="content"
+                    id="content"
+                    required
+                    data-validation-required-message="Please enter a message."
+                  >
+                  </textarea> -->
 
                   <input
                     type="text"
@@ -159,7 +189,7 @@
               <div class="form-group">
                 <button
                   type="submit"
-                  class="btn btn-secondary"
+                  class="designButton btn btn-success"
                   id="sendMessageButton"
                 >
                   Send
